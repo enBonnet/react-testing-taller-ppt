@@ -46,6 +46,7 @@
 					style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 					<h2>Jest</h2>
 					<p>Motor de tests sobre el que corré Testing-Library</p>
+					<p><a href="https://jestjs.io/">Link</a></p>
 				</div>
 			</section>
 
@@ -54,6 +55,7 @@
 					style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 					<h2>Enzyme</h2>
 					<p>Creada por Airbnb, es una librería de utilitaría para testear React</p>
+					<p><a href="https://airbnb.io/enzyme/">Link</a></p>
 				</div>
 			</section>
 
@@ -62,6 +64,7 @@
 					style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 					<h2>Testing Library</h2>
 					<p>Creada por Kent C. Dodds como una librería utilitaría para testear React</p>
+					<p><a href="https://testing-library.com">Link</a></p>
 				</div>
 			</section>
 
@@ -96,145 +99,114 @@
 					<li>Los test son agnosticos a cambios en el código</li>
 					<li>Se prueba el funcionamiento esperado</li>
 					<li>Un código más testeado es un código más confiable</li>
+					<li>La descripción del test es la acción esperada</li>
+					<li>La descripción puede contener o no algún identificador</li>
 				</ul>
 			</section>
 
 			<section>
 				<blockquote
 					cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-					&ldquo;Un código testeado es un código que tiene menos posibilidades de fallar el producción, porque ya lo
-					probaste en tu maquina y en el pipeline.&rdquo;
+					&ldquo;Un código testeado es un código que tiene menos posibilidades de fallar en producción, porque ya lo
+					probaste en tu nave espacial.&rdquo;
 				</blockquote>
-				<small>- Yo lo invente -</small>
+				<small>- Rocket Raccoon, Guadianes de la Galaxía VOL 1 -</small>
 			</section>
 
 			<section>
-				<h2>Pretty Code</h2>
-				<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
-import React, { useState } from 'react';
-
-function Example() {
-  const [count, setCount] = useState(0);
-
-  return (
-    &lt;div&gt;
-      &lt;p&gt;You clicked {count} times&lt;/p&gt;
-      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
-        Click me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-					</code></pre>
-				<p>Code syntax highlighting courtesy of <a
-						href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				<img src="./img/rocket.gif" />
 			</section>
 
 			<section>
-				<h2>Fantastic Ordered List</h2>
-				<ol>
-					<li>One is smaller than...</li>
-					<li>Two is smaller than...</li>
-					<li>Three!</li>
-				</ol>
+				<h6>Instalar 🐙 @testing-library</h6>
+				<pre>
+											<code class="hljs" data-trim data-line-numbers="1">
+												npm install --save-dev @testing-library/dom
+											</code>
+										</pre>
 			</section>
 
 			<section>
-				<h2>Tabular Tables</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Item</th>
-							<th>Value</th>
-							<th>Quantity</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Apples</td>
-							<td>$1</td>
-							<td>7</td>
-						</tr>
-						<tr>
-							<td>Lemonade</td>
-							<td>$2</td>
-							<td>18</td>
-						</tr>
-						<tr>
-							<td>Bread</td>
-							<td>$3</td>
-							<td>2</td>
-						</tr>
-					</tbody>
-				</table>
+				<h6>Instalar 🐙 @testing-library para ⚛️ React</h6>
+				<pre>
+					<code class="hljs" data-trim data-line-numbers="1">
+						npm install --save-dev @testing-library/react
+					</code>
+				</pre>
 			</section>
 
 			<section>
-				<h2>Intergalactic Interconnections</h2>
-				<p>
-					You can link between slides internally,
-					<a href="#/2/3">like this</a>.
-				</p>
+				<h6>Instalar 🐙 @testing-library para Jest</h6>
+				<pre>
+											<code class="hljs" data-trim data-line-numbers="1">
+												npm install --save-dev @testing-library/jest-dom
+											</code>
+										</pre>
 			</section>
 
 			<section>
-				<h2>Speaker View</h2>
-				<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer,
-					preview of the upcoming slide as well as your speaker notes.</p>
-				<p>Press the <em>S</em> key to try it out.</p>
+				<h2>Un test</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="3,8,10">
+import React from "react";
+import { Counter } from "./Counter";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 
-				<aside class="notes">
-					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the
-					speaker notes window (hit 's' on your keyboard).
-				</aside>
+afterEach(cleanup);
+
+test("el contador comienza en 0", () => {
+	&lt;const container = render(<Counter></Counter>);&gt;
+
+	&lt;const counter = container.getByText("0");&gt;
+});</code></pre>
 			</section>
 
 			<section>
-				<h2>Global State</h2>
-				<p>
-					Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-					will be added as a class to the document element when the slide is open. This lets you
-					apply broader style changes, like switching the page background.
-				</p>
-			</section>
+				<h3>API de 🐙 Testing-Library</h3>
+				<p>Algunos metodos comunes</p>
+				<pre><code class="hljs" data-trim>render() //que renderiza</code></pre>
+				<pre><code class="hljs" data-trim>
+import { render } from '@testing-library/react'
 
-			<section data-state="customevent">
-				<h2>State Events</h2>
-				<p>
-					Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code>
-					name.
-				</p>
-				<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+render(<div>Claro que si soy un componente</div>)
+				</code></pre>
 			</section>
 
 			<section>
-				<h2>Take a Moment</h2>
-				<p>
-					Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take
-					distracting slides off the screen.
-				</p>
+				<h3>API de 🐙 Testing-Library</h3>
+				<p>Algunos metodos comunes</p>
+				<pre><code class="hljs" data-trim>cleanup() // limpia el dom antes de cada test (test/suit)</code></pre>
+				<pre><code class="hljs" data-trim>
+			import { cleanup, render } from '@testing-library/react'
+			
+			afterEach(cleanup) // <-- se usa aquí
+
+			test('renders into document', ()=> {
+				render(<div>Soy un componente bien chingon</div>)
+				// ...
+			})
+			
+				// ... más tests, más mejor ...
+							</code></pre>
+			</section>
+
+			<section data-background-iframe="https://testing-library.com/docs/react-testing-library/cheatsheet"
+				data-background-interactive>
+				<div
+					style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+					<p>Metodos de query disponibles para probar en el DOM</p>
+					<p><a href="https://testing-library.com/docs/react-testing-library/cheatsheet">Link</a></p>
+				</div>
 			</section>
 
 			<section>
-				<h2>Much more</h2>
-				<ul>
-					<li>Right-to-left support</li>
-					<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-					<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-					<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-					<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-				</ul>
+				<h3>Yapo Ender, cortala</h3>
+				<img height="400px" src="./img/bored.gif" alt="bebe se duerme" />
 			</section>
 
 			<section style="text-align: left;">
 				<h1>THE END</h1>
 				<p>
-					- <a href="https://slides.com">Try the online editor</a> <br>
-					- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					- <a href="https://testing-library-taller-app.netlify.com">App de los Tests</a> <br>
 				</p>
 			</section>
 
@@ -253,7 +225,7 @@ Reveal.addEventListener( 'customevent', function() {
 			center: true,
 			hash: true,
 
-			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies: [
