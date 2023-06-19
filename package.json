@@ -43,6 +43,6 @@
   "license": "MIT",
   "dependencies": {
     "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-nodeunit": "^2.0.0"
+    "grunt-contrib-nodeunit": "^5.0.0"
   }
 }
